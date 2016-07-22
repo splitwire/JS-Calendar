@@ -18,6 +18,6 @@ var calendar = new calendar({ elm: document.getElementById('calendar'), time: tr
 
 Once a selection is made the 'change' event is fired.  You can feed the value directly into a new Javascript Date Object and use it as needed.
 
-document.getElementById('calendar').addEventListener('change', function(event) {
+document.getElementById('calendar').addEventListener('change', function(event) { <br>
   var date = new Date(event.target.value);
 }, false);
