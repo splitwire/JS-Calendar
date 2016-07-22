@@ -1,0 +1,98 @@
+﻿.popup-calendar
+{
+    border:             1px solid gray;
+    border-radius:      15px;
+    position:           absolute;
+    z-index:            1000;
+    padding:            10px;
+    background-color:   #cce6ff;
+    display:            none;
+}
+
+        
+.popup-calendar-title
+{
+    width:              100%;
+    text-align:         center;
+    font-weight:        bold;
+    font-size:          20pt;
+}
+
+.popup-calendar table
+{
+    margin-left:        5%;
+}
+
+
+.popup-calendar .popup-calendar-day
+{
+    text-align:         center;
+    vertical-align:     middle;
+}
+
+
+.popup-calendar .popup-calendar-day:hover
+{
+    cursor:             pointer;
+    background-color:   yellow;
+}
+
+.popup-calendar table tbody td:active
+{
+    font-weight:        bold;
+}
+
+
+
+
+.popup-calendar img
+{
+    width:              20px;
+    position:           absolute;
+    cursor:             pointer;
+}
+
+
+
+
+.popup-calendar-time
+{
+    font-size:          30pt;
+    height:             40px;    
+    position:           relative;
+    display:            flex;
+    justify-content:    space-between;
+}
+
+.popup-calendar-time div
+{
+    float:              right;
+    height:             40px;
+}
+
+
+.popup-calendar-time img
+{
+    width:              20px;
+    position:           absolute;
+}
+
+
+.popup-calendar-time img[src="images/down-arrow.png"]
+{
+    bottom:             0px;
+}
+
+.popup-calendar-time img[src="images/up-arrow.png"]
+{
+    top:                 0px;
+}
+
+.popup-calendar-spinner
+{
+    border:             1px solid gray;
+    border-radius:      10px;
+    width:              20px;
+    height:             40px;
+    margin-left: 2px;
+}
