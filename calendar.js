@@ -277,7 +277,7 @@ function calendar( opts ) {
                 day.appendChild(document.createTextNode(dayCount));
                 day.className = 'popup-calendar-day';
 
-                day.addEventListener('click', (function(event) { this.callback(event); }).bind(this), false);
+                day.addEventListener('click', (function(e) { this.callback(e); }).bind(this), false);
 
                 dayCount++;
             }
@@ -380,20 +380,20 @@ function calendar( opts ) {
 
     this.hide = function() {
         this._calendar.style.display = 'none';
-        document.removeEventListener('click', (function() { this.determineHide(event); }).bind(this), false);
+        document.removeEventListener('click', (function(e) { this.determineHide(e); }).bind(this), false);
         this.display = false;
     };
 
     this.show = function() {
-        document.addEventListener('click', (function() { this.determineHide(event); }).bind(this), false);
+        document.addEventListener('click', (function(e) { this.determineHide(e); }).bind(this), false);
         this._calendar.style.display = 'block';
         this.display = true;
     };
 
 
-    this.callback = function(event) {
+    this.callback = function(e) {
 
-        this.date.setDate(event.target.textContent);
+        this.date.setDate(e.target.textContent);
 
         this._elm.value = this.parseDate();
         this.hide();
@@ -411,17 +411,17 @@ function calendar( opts ) {
     };
 
 
-    this.determineHide = function(event) {
+    this.determineHide = function(e) {
 
         if (this.display) {
-
+            
             var w = this._calendar.offsetWidth;
             var h = this._calendar.offsetHeight + 20; //20 is to account for padding
 
             var y = parseInt(this._elm.offsetTop - this._elm.scrollTop + this._elm.clientTop);
             var x = parseInt(this._calendar.style.left.split('px')[0]);
 
-            if (event.clientX < x || event.clientX > (x + w) || event.clientY < y || event.clientY > (y + h)) { this.hide(); }
+            if (e.clientX < x || e.clientX > (x + w) || e.clientY < y || e.clientY > (y + h)) { this.hide(); }
 
         }
 
