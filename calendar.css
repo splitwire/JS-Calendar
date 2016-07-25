@@ -64,6 +64,13 @@
     justify-content:    space-between;
 }
 
+.popup-calendar-labels
+{
+    font-size:          10px;
+    position:           absolute;
+    top: -2px;
+}
+
 .popup-calendar-time div
 {
     float:              right;

@@ -115,9 +115,26 @@ function calendar( opts ) {
         this._timer.className = 'popup-calendar-time';
 
 
-        this._hours = document.createTextNode('00'); 
+        var h = document.createElement('div');
+        h.className = 'popup-calendar-labels';
+
+        var m = document.createElement('div');
+        m.className = 'popup-calendar-labels';
+
+        var s = document.createElement('div');
+        s.className = 'popup-calendar-labels';
+
+        h.appendChild(document.createTextNode('hours'));
+        m.appendChild(document.createTextNode('min'));
+        s.appendChild(document.createTextNode('sec'));
+
+
+
+        this._hours = document.createTextNode('00');
         var hoursContainer = document.createElement('div');
+        hoursContainer.appendChild(h);
         hoursContainer.appendChild(this._hours);
+
 
         var hoursArrows = document.createElement('div');
         hoursArrows.className = 'popup-calendar-spinner';
@@ -156,6 +173,7 @@ function calendar( opts ) {
 
         this._minutes = document.createTextNode('00');
         var minutesContainer = document.createElement('div');
+        minutesContainer.appendChild(m);
         minutesContainer.appendChild(this._minutes);
 
         var minutesArrows = document.createElement('div');
@@ -193,9 +211,9 @@ function calendar( opts ) {
 
 
 
-
-        var secondsContainer = document.createElement('div');
         this._seconds = document.createTextNode('00')
+        var secondsContainer = document.createElement('div');
+        secondsContainer.appendChild(s);
         secondsContainer.appendChild(this._seconds);
 
         var secondsArrows = document.createElement('div');
